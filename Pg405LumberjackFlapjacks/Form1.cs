@@ -16,5 +16,21 @@ namespace Pg405LumberjackFlapjacks
         {
             InitializeComponent();
         }
+
+        Queue<string> queue = new Queue<string>();
+
+        private void addLumberjack_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(name.Text))
+            {
+                queue.Enqueue(name.Text);
+                name.Text = "";
+                line.Items.Clear();
+                foreach (string name in queue)
+                {
+                    line.Items.Add(name);
+                }
+            }
+        }
     }
 }
