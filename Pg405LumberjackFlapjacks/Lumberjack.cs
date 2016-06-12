@@ -30,9 +30,9 @@ namespace Pg405LumberjackFlapjacks
         {
             // console write all the flapjacks
             Console.WriteLine($"{Name}'s eating flapjacks{Environment.NewLine}");
-            foreach (Flapjack flapjack in meal)
+            while (meal.Count > 0)
             {
-                Console.WriteLine($"{Name} ate a {flapjack.ToString().ToLower()}{Environment.NewLine}");
+                Console.WriteLine($"{Name} ate a {meal.Pop().ToString().ToLower()} flapjack{Environment.NewLine}");
             }
         }
     }
